@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <style>
+      img#logo {
+        width: 20%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      img#center-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: rotate-center-image 0s linear infinite paused;
+      }
+
+      @keyframes rotate-center-image {
+        from {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        to {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+
+      #audio-controls {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+    </style>
+    <script>
+      function playAudio() {
+        const audio = document.getElementById("audio");
+        audio.play();
+        document.getElementById("center-image").style.animation =
+          "rotate-center-image 10s linear infinite running";
+      }
+
+      function pauseAudio() {
+        const audio = document.getElementById("audio");
+        audio.pause();
+        document.getElementById("center-image").style.animationPlayState = "paused";
+      }
+    </script>
+  </head>
+  <body>
+    <img id="logo" src="https://cher-is.com/wp-content/uploads/2020/09/shan.jpg">
+    <img id="center-image" src="https://d2w9rnfcy7mm78.cloudfront.net/20210241/original_5d8677e1ce1ca2fcd37aae9e6017cb8d.png?1675536958?bc=0">
+    <audio id="audio" src="https://biffhard.sunproxy.net/file/SGxDMnMxbXdvUVIvUHpva3FrZkJvek5samJWbG1aR0x5M1JDSVk1S1I0cTgvVWEybFh0aU1MdVRPZHk3MkJNNHhnSXJENEJHd1N4VDJLbjFCNnBXeG5EZWJNdkhZY0loelZsWkM3V1FPaTA9/Aleksandr_Rozenbaum_-_Cadillac_MORGENSHTERN_Eldzhej_cover_(BiffHard.TOP).mp3" type="audio/mpeg"></audio>
+    <div id="audio-controls">
+      <button onclick="playAudio()">Play</button>
+      <button onclick="pauseAudio()">Pause</button>
+    </div>
+  </body>
+</html>
