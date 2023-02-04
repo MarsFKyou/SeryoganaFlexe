@@ -5,8 +5,8 @@
         width: 20%;
         height: auto;
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 10;
+        left: 10;
       }
 
       img#center-image {
@@ -28,9 +28,11 @@
 
       #audio-controls {
         position: absolute;
-        bottom: 0;
-        right: 0;
-      }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
     </style>
     <script>
       function playAudio() {
